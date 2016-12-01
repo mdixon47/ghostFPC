@@ -1,0 +1,68 @@
+<section class="content-area prefooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <article class="table-content animated" data-fx="flipInY">
+                    <section class="table-row">
+                        <div class="table-cell">
+                            <h1 class="widget-title">Follow us</h1>
+                        </div>
+                        <div class="table-cell">
+                            <ul class="socialIcons bigIcons">
+                                <li><a href="https://www.facebook.com/createITpl" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/createitpl" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <div class="newsletterForm">
+                    <div class="successMessage alert alert-success alert-dismissable" style="display: none">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        Thank You! E-mail was sent.
+                    </div>
+                    <div class="errorMessage alert alert-danger alert-dismissable" style="display: none">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        Ups! An error occured. Please try again later.
+                    </div>
+                    <form class="liveForm" role="form" action="/content/themes/pluto/assets/form/send.php" method="post" data-email-subject="Newsletter Form" data-show-errors="true" data-hide-form="true">
+                        <fieldset>
+                            <article class="table-content animated" data-fx="flipInY">
+                                <section class="table-row">
+                                    <div class="table-cell">
+                                        <h1 class="widget-title">Get the newsletter</h1>
+                                    </div>
+                                    <div class="table-cell">
+                                        <label class="sr-only">Your e-mail address</label>
+                                        <input type="email" name="field[]" class="form-control" placeholder="Your email address">
+                                    </div>
+                                    <div class="table-cell">
+                                        <input type="submit" class="btn btn-primary" value="Subscribe">
+                                    </div>
+                                </section>
+                            </article>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / section -->
+
+<footer>
+    <div class="container mainfooter">
+        <div class="row">
+            <aside class="col-md-12 text-center widget">
+                <img src="{{asset "images/logo-footer.png"}}" alt=" ">
+                <br><br><br>
+
+                <p class="darker">Made with love by <a href="http://themeforest.net/user/ThemeWoodmen/portfolio?WT.ac=portfolio_item&WT.z_author=ThemeWoodmen">ThemeWoodmen</a> © 2014</p>
+            </aside>
+
+        </div>
+    </div>
+</footer>

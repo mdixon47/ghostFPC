@@ -1,0 +1,36 @@
+<!--Pagination-->
+<!--this is essential for moving beetween the post-->
+<div class="row">
+
+    <div class="col-md-4 col-xs-4 text-left" >
+        {{#if prev}}
+            <a href="{{page_url prev}}#blog"><span class="navigation-blog">← Previous page</span></a>
+        {{/if}}
+    </div>
+
+
+    <div class="col-md-4 col-xs-4  text-center navigation-blog2">
+
+        <span>{{page}} of {{pages}}</span>
+
+    </div>
+
+
+    <div class="col-md-4 col-xs-4 text-right" >
+        {{#if next}}
+            <a href="{{page_url next}}#blog"><span class="navigation-blog">Next page →</span></a>
+        {{/if}}
+    </div>
+
+
+    <!--<div class="clearfix visible-sm visible-xs "></div>-->
+
+
+</div>
+
+
+
+
+
+
+

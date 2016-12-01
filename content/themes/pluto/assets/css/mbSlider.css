@@ -1,0 +1,60 @@
+.mbSlider-main-container {
+  position: relative;
+  margin-bottom: 0px;
+}
+.mbSlider-main-container .arrow {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  bottom: 0;
+  z-index: 110;
+  margin: auto 0;
+  background-color: opacity;
+  border: none;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  vertical-align: middle;
+  font-size: 40px;
+  cursor: pointer;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.mbSlider-main-container .arrow:hover {
+  background-color: opacity;
+  color: #ea623d;
+}
+.mbSlider-main-container .arrow .mbSliderContent {
+  position: relative;
+}
+.mbSlider-main-container .arrow .mbSliderContent .inner-container {
+  position: absolute;
+}
+.mbSlider-main-container div.arrow.left {
+  left: 0;
+  margin-left: 1%;
+}
+.mbSlider-main-container div.arrow.right {
+  right: 0;
+  margin-right: 1%;
+}
+.mbContentHide {
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+.mbContentShow {
+  opacity: 1;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/motive.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/animate.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/mbSlider.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style2.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/author_style.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <script src="{{asset "js/modernizr.custom.js"}}"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{{asset "bootstrap/js/html5shiv.js"}}"></script>
+    <script src="{{asset "bootstrap/js/respond.min.js"}}"></script>
+    <![endif]-->
+
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+<body class="home-template withAnimation home-slice-effect">
+{{! home-slice-effect class for Slice effect}}
+{{! home-slice-effect class for Slice effect}}
+
+{{>menu}}
+
+<div id="boxedWrapper">  <!--thanks to this you can scroll the website more efective-->
+    {{! Everything else gets inserted here }}
+
+    {{{body}}}
+        {{! Page footer goes here }}
+    {{> footer}}
+    {{! Ghost outputs important scripts and data with this tag }}
+    </div>    <!--this div block is from push_slider and is needed to close the div block. Remove if if you do not use Slice or Push effect-->
+    {{ghost_foot}}
+<a href="#" id="toTop" style="position: fixed!important"><i class="fa fa-angle-up"></i></a> <!--this is button used to scroll the website-->
+
+</div>
+<!-- / boxedWrapper -->
+
+{{! The main JavaScript files for Pluto }}
+<script src="{{asset "js/jquery.min.js"}}"></script>
+<script src="{{asset "bootstrap/js/bootstrap.min.js"}}"></script>
+<script src="{{asset "js/detectmobilebrowser.js"}}"></script>
+<script src="{{asset "js/jquery.appear.js"}}"></script>
+<script src="{{asset "js/jquery.flexslider-min.js"}}"></script>
+<script src="{{asset "js/classie.js"}}"></script>
+<script src="{{asset "js/effect.js"}}"></script>
+
+
+<script src="{{asset "js/jquery.placeholder.min.js"}}"></script>
+<script src="{{asset "js/gmap3.min.js"}}"></script>
+<script src="{{asset "js/jquery.isotope.min.js"}}"></script>
+<script src="{{asset "form/js/form.js"}}"></script>
+<script src="{{asset "js/jquery.mb.YTPlayer.js"}}"></script>
+<script src="{{asset "js/jquery.fitvids.js"}}"></script>
+
+<script src="{{asset "js/mb-ghost-slider.js"}}"></script>
+<script src="{{asset "js/SmoothScroll.js"}}"></script>
+<script src="{{asset "js/main.js"}}"></script>
+
+</body>
+</html>

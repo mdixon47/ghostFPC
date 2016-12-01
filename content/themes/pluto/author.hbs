@@ -1,0 +1,64 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+{{! Everything inside the #author tags pulls data from the author }}
+<!--section has author information, the picture, title of the post-->
+<section class="content-area bg1">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="innerMargin">
+
+            {{#author}}
+
+                <section class="author-profile2 inner2">
+                    {{#if image}}
+                        <figure class="author-image2">
+                            <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
+                        </figure>
+                    {{/if}}
+                    <h1 class="author-title2">{{name}}</h1>
+                    <h2 class="author-bio2">{{bio}}</h2>
+                    <div class="author-meta">
+                        {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                        {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                        <span class="author-stats" style="padding-left: 10px;"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+                    </div>
+                </section>
+            {{/author}}
+
+            {{! This is the post loop - each post will be output using this markup }}
+
+                {{#foreach posts}}
+                    <article class="blog-item item-bigger isotope-item animated" data-fx="fadeInUp">
+                        <div class="blog-thumbnail mbslider responsiveVideo">
+                            {{#if image}}
+                                <a href="{{url}}"><img src="{{image}}" alt="{{title}}"></a>
+                            {{else}}
+                                <a href="{{url}}" title="{{title}}">{{content words="0"}}</a>
+                            {{/if}}
+                        </div>
+                        <div class="entry-meta">
+
+                            <span class="entry-date">{{date published_at format="MMMM DD, YYYY"}} </span>
+                            <span class="by-author">by {{author}}</span>
+                        </div>
+                        <h4 class="entry-title"><a href="{{url}}">{{{title}}}</a></h4>
+                        <div class="mbslider-source" style="display: none;">
+                            {{content}}
+                        </div>
+                        <p>
+                            {{excerpt words="60"}}  {{!okresla liczbe slow wyswietlanych postow bez czytania dalej}}
+                        </p>
+                        <br>
+                        <a href="{{url}}" class="readMore">Continue reading →</a>
+                    </article>
+                {{/foreach}}
+
+                {{! Previous/next page links - displayed on every page }}
+                {{pagination}}
+
+        </div>
+            </div>
+</div>
+    </div>
+</section>

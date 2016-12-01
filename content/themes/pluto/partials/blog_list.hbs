@@ -1,0 +1,40 @@
+<div class="content-area bg1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="innerMargin">
+                    {{#foreach posts}}
+                        <article class="blog-item item-bigger isotope-item animated" data-fx="fadeInUp">
+                            <div class="blog-thumbnail mbslider responsiveVideo">
+                                {{#if image}}
+                                   <a href="{{url}}"><img src="{{image}}" alt="{{title}}"></a>
+                                {{else}}
+                                   <a href="{{url}}" title="{{title}}">{{content words="0"}}</a>
+
+                                {{/if}}
+
+                            </div>
+                            <div class="entry-meta">
+                                <span class="entry-date">{{date published_at format="MMMM DD, YYYY"}} </span>
+                                <span class="by-author">by {{author}}</span>
+                            </div>
+                            <h4 class="entry-title"><a href="{{url}}">{{{title}}}</a></h4>
+                            <div class="mbslider-source" style="display: none;">
+                                {{content}}
+                            </div>
+                            <p>
+                                {{excerpt words="60"}}  {{!okresla liczbe slow wyswietlanych postow bez czytania dalej}}
+                            </p>
+                            <br>
+                            <a href="{{url}}" class="readMore">Continue reading →</a>
+                        </article>
+                    {{/foreach}}
+                    {{! Pagination }}
+                    {{#if pagination}}
+                        {{{pagination}}}
+                    {{/if}}
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

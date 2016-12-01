@@ -1,0 +1,44 @@
+<div class="content-area bg2">
+    <div class="container">
+        <div id="blog-list" class="clearfix withMasonry">
+            {{#foreach posts}}
+
+                <article class="blog-item item-bigger isotope-item ">
+
+                    <div class="blog-thumbnail mbslider responsiveVideo">
+                        {{#if image}}
+                            <a href="{{url}}"><img src="{{image}}" alt="{{title}}"></a>
+                        {{else}}
+
+                            <a href="{{url}}" title="{{title}}">{{content words="0"}}</a>
+                        {{/if}}
+
+
+
+                    </div>
+                    <div class="innerMargin">
+                        <div class="entry-meta">
+
+                            <span class="entry-date">{{date published_at format="MMMM DD, YYYY"}} </span>
+                            <span class="by-author">by {{author}}</span>
+                        </div>
+                        <h4 class="entry-title"><a href="{{url}}">{{{title}}}</a></h4>
+                        <div class="mbslider-source" style="display:none">
+                                {{content}}
+                        </div>
+                        <p>
+
+                            {{excerpt words="60"}}  {{!okresla liczbe slow wyswietlanych postow bez czytania dalej}}
+                        </p>
+                        <br>
+                        <a href="{{url}}" class="readMore">Continue reading →</a>
+                    </div>
+                </article>
+            {{/foreach}}
+        </div>
+        {{! Pagination }}
+        {{#if pagination}}
+            {{{pagination}}}
+        {{/if}}
+    </div>
+</div>
