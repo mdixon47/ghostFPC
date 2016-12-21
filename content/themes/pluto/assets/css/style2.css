@@ -1027,18 +1027,18 @@ body {
 }
 .parallaxSection.height100 {
     position: relative;
-    height: 100%;
+    height: 1000px;
     min-height: 0;
 }
 .parallaxSection.height100 .flexslider {
-    height: 100%;
+    height: 1000px;
 }
 .parallaxSection.height100 .flexslider .flex-viewport,
 .parallaxSection.height100 .flexslider .slides,
 .parallaxSection.height100 .flexslider .slides li,
 .parallaxSection.height100 .flexslider .slides li .container,
 .parallaxSection.height100 .flexslider .slides li .container .inner {
-    height: 100%;
+    height: 1000px;
 }
 .parallaxSection.height100 .flexslider .slides li .container {
     display: table;
