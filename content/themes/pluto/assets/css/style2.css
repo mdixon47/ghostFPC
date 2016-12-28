@@ -1375,6 +1375,11 @@ body.preloader #ct_preloader {
     line-height: 23px;
     margin: 0;
 }
+/* ====   Content footer  ===== */
+.page-footer{
+  margin-top: 50px;
+}
+
 /* ===================== */
 /* === TIMER COUNTER === */
 .timerCounter .timerVal {
