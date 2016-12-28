@@ -72,7 +72,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     background: #2a272e;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 22px;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
@@ -1125,6 +1125,11 @@ body.preloader #ct_preloader {
     margin-top: -20px;
     margin-left: -20px;
 }
+.train_info p{
+  margin-bottom: 15px;
+}
+
+
 /* ======================= */
 /* ====== ICON BOX ======= */
 .brightText .iconBox.type2 p,
@@ -2858,7 +2863,7 @@ html[xmlns] .slides {
     margin-left: -585px;
     position: absolute;
     bottom: 40px;
-    text-align: left;
+    text-align: center;
     z-index: 100;
 }
 .flexslider .flex-control-nav li {
@@ -2940,7 +2945,7 @@ html[xmlns] .slides {
     margin-left: 0;
     position: absolute;
     bottom: -60px;
-    text-align: center;
+    text-align: left;
 }
 .flexslider.carousel-slider .flex-control-paging li a {
     border: 1px solid #999;
