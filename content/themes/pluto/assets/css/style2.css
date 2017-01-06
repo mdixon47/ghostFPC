@@ -234,6 +234,13 @@ h6 {
     padding: 9px 0;
     letter-spacing: normal;
 }
+/* === About us Goal list === */
+.goal_list {
+  margin-top: 50px;
+}
+.goal_list ul li{
+  list-style: none;
+}
 hr {
     background: none;
     border-top: 1px solid #e5e5e5;
