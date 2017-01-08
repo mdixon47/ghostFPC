@@ -1943,7 +1943,22 @@ footer .search-form input[type="submit"].active {
     margin-top: -22px;
     position: relative;
 }
+
 /* ===================== */
+/* ==== Loss Team Content ======== */
+.lt-content{
+  margin-top: 30px;
+}
+.lt-content p{}
+
+.lt-image {
+  margin-right:120px;
+  height: 320px;
+  width: 320px;
+}
+
+
+
 /* ====== FLICKR ======= */
 .flickr_badge {
     margin: 3px 0 0 -15px;
