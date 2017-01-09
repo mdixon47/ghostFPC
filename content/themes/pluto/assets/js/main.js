@@ -7,10 +7,10 @@ isIE = false;
 var isiPad = (navigator.userAgent.match(/iPad/i) != null);
 
 
-$.fn.isAfter = function (sel) {
+$.fn.isAfter = function(sel) {
     return this.prevAll(sel).length !== 0;
 }
-$.fn.isBefore = function (sel) {
+$.fn.isBefore = function(sel) {
     return this.nextAll(sel).length !== 0;
 }
 
@@ -35,7 +35,7 @@ function parseBoolean(str, $defaultValue) {
 
 function initmap() {
     "use strict";
-    jQuery(".googleMap").each(function () {
+    jQuery(".googleMap").each(function() {
         var atcenter = "";
         var $this = jQuery(this);
         var location = $this.data("location");
@@ -49,7 +49,7 @@ function initmap() {
         if (validatedata(location)) {
 
             var draggable = true;
-            if (($.browser.mobile)||(isiPad)) {
+            if (($.browser.mobile) || (isiPad)) {
                 draggable = false;
             }
 
@@ -60,7 +60,7 @@ function initmap() {
                     options: {
                         visible: false
                     },
-                    callback: function (marker) {
+                    callback: function(marker) {
                         atcenter = marker.getPosition();
                     }
                 },
@@ -82,7 +82,7 @@ function initmap() {
                         }
                     },
                     events: {
-                        idle: function () {
+                        idle: function() {
                             if (!$this.data('idle')) {
                                 $this.gmap3('get').panBy(0, offset);
                                 $this.data('idle', true);
@@ -105,9 +105,9 @@ function initmap() {
             });
 
             // center on resize
-            google.maps.event.addDomListener(window, "resize", function () {
+            google.maps.event.addDomListener(window, "resize", function() {
                 //var userLocation = new google.maps.LatLng(53.8018,-1.553);
-                setTimeout(function () {
+                setTimeout(function() {
                     $this.gmap3('get').setCenter(atcenter);
                     $this.gmap3('get').panBy(0, offset);
                 }, 400);
@@ -135,20 +135,20 @@ if ($(".googleMap").length > 0) {
 }
 
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     "use strict";
     $ = jQuery.noConflict();
 
     /* ============================= */
     /* ==== SET ELEMENTS HEIGHT ==== */
     // flexslider
-    $('.flexslider.std-slider').each(function () {
+    $('.flexslider.std-slider').each(function() {
         var $this = $(this);
         $this.css('min-height', $this.attr('data-height') + "px");
     })
 
     // spacer element
-    $('.spacer').each(function () {
+    $('.spacer').each(function() {
         var $this = $(this);
         $this.css('height', $this.attr('data-height') + "px");
     })
@@ -156,7 +156,7 @@ jQuery(document).ready(function () {
     /* ================================== */
     /* ==== SET PADDING FOR SECTIONS ==== */
 
-    $(".content-area, .parallaxSection").each(function () {
+    $(".content-area, .parallaxSection").each(function() {
         var $this = $(this);
         var bottomSpace = $this.attr("data-btmspace");
         var topSpace = $this.attr("data-topspace");
@@ -176,7 +176,7 @@ jQuery(document).ready(function () {
 
     if ($(".parallaxSection.height100").length > 0) {
 
-        $(".parallaxSection.height100").each(function () {
+        $(".parallaxSection.height100").each(function() {
 
             var $this = $(this);
             $("#boxedWrapper, body").css("height", "100%");
@@ -204,18 +204,21 @@ jQuery(document).ready(function () {
 
     if ($().appear) {
 
-        if (($.browser.mobile)||(isiPad)) {
+        if (($.browser.mobile) || (isiPad)) {
             // disable animation on mobile
             $("body").removeClass("withAnimation");
         } else {
 
-            $('.withAnimation .animated').appear(function () {
+            $('.withAnimation .animated').appear(function() {
                 var $this = $(this);
-                $this.each(function () {
+                $this.each(function() {
                     $this.addClass('activate');
                     $this.addClass($this.data('fx'));
                 });
-            }, {accX: 50, accY: -150});
+            }, {
+                accX: 50,
+                accY: -150
+            });
 
         }
     }
@@ -225,13 +228,27 @@ jQuery(document).ready(function () {
 
     function animateArrow() {
 
-        setTimeout(function () {
-            $(".bigArrow i").css('opacity', 1).stop(true, true).animate({ opacity: 0, top: "15px" }, { queue: false, duration: 350, complete: function () {
+        setTimeout(function() {
+            $(".bigArrow i").css('opacity', 1).stop(true, true).animate({
+                opacity: 0,
+                top: "15px"
+            }, {
+                queue: false,
+                duration: 350,
+                complete: function() {
 
-                $(".bigArrow i").css("top", "-15px").stop(true, true).delay(200).animate({ opacity: 1, top: 0 }, { queue: false, duration: 450, complete: function () {
-                    animateArrow();
-                }})
-            }})
+                    $(".bigArrow i").css("top", "-15px").stop(true, true).delay(200).animate({
+                        opacity: 1,
+                        top: 0
+                    }, {
+                        queue: false,
+                        duration: 450,
+                        complete: function() {
+                            animateArrow();
+                        }
+                    })
+                }
+            })
         }, 1800);
     }
 
@@ -241,7 +258,7 @@ jQuery(document).ready(function () {
     /* ========================== */
     /* ==== SCROLL TO ANCHOR ==== */
 
-    $('a.local[href*=#]:not([href=#])').click(function () {
+    $('a.local[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -274,16 +291,16 @@ jQuery(document).ready(function () {
     /* ======================================= */
     /* === CLICKABLE MAIN PARENT ITEM MENU === */
 
-    if(isiPad) {
+    if (isiPad) {
 
     } else {
         jQuery(".navbar-default li.dropdown > .dropdown-toggle").removeAttr("data-toggle data-target");
     }
 
-    $("body").on("click", ".navbar-default .dropdown", function () {
+    $("body").on("click", ".navbar-default .dropdown", function() {
         var $this = $(this);
 
-        if($this.hasClass("open")) {
+        if ($this.hasClass("open")) {
             $this.find("> .dropdown-toggle").removeAttr("data-toggle data-target");
         }
 
@@ -299,12 +316,14 @@ jQuery(document).ready(function () {
     /* ==== TO TOP BUTTON ==== */
 
 
-    $('#toTop').click(function () {
-        $("body,html").animate({scrollTop: 0}, 600);
+    $('#toTop').click(function() {
+        $("body,html").animate({
+            scrollTop: 0
+        }, 600);
         return false;
     });
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(this).scrollTop() != 0) {
             $("#toTop").fadeIn(300);
         } else {
@@ -315,12 +334,12 @@ jQuery(document).ready(function () {
     /* =========================== */
     /* ==== SHOW MAP ON CLICK ==== */
 
-    $(".showMap").click(function () {
+    $(".showMap").click(function() {
         var $this = $(this);
         var $parent = $this.closest(".content-layer");
         var $form = $parent.find(".placeOver");
 
-        $parent.find(".bg-layer, .placeOver").fadeToggle(250, function () {
+        $parent.find(".bg-layer, .placeOver").fadeToggle(250, function() {
             if (($form).is(":visible")) {
                 $this.text($this.attr("data-old"));
             } else {
@@ -343,20 +362,22 @@ jQuery(document).ready(function () {
     /* === PROGRESS BAR === */
 
     if (($().appear) && ($(".progress").length > 0)) {
-        jQuery('.progress').appear(function () {
+        jQuery('.progress').appear(function() {
             var $this = jQuery(this);
-            $this.each(function () {
+            $this.each(function() {
                 var $innerbar = $this.find(".progress-bar");
                 var percentage = $innerbar.attr("data-percentage");
 
                 $innerbar.addClass("animating").css("width", percentage + "%");
 
-                $innerbar.on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function () {
+                $innerbar.on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
                     $this.find(".pro-level").fadeIn(600);
                 });
 
             });
-        }, {accY: -100});
+        }, {
+            accY: -100
+        });
     }
 
     /* ================== */
@@ -364,7 +385,7 @@ jQuery(document).ready(function () {
 
     if (($.Isotope) && ($('#blog-list.withMasonry').length > 0)) {
 
-        jQuery(window).load(function () {
+        jQuery(window).load(function() {
 
             // blog masonry
 
@@ -375,22 +396,22 @@ jQuery(document).ready(function () {
                     layoutMode: 'sloppyMasonry',
                     resizable: false, // disable normal resizing
                     // set columnWidth to a percentage of container width
-                    masonry: { }
+                    masonry: {}
                 };
 
 
-            $(window).smartresize(function () {
+            $(window).smartresize(function() {
                 $blogContainer.isotope({
                     // update columnWidth to a percentage of container width
-                    masonry: { }
+                    masonry: {}
                 });
             });
 
             // set up Isotope
-            $blogContainer.isotope(defaultOptions, function () {
+            $blogContainer.isotope(defaultOptions, function() {
 
                 // fix for height dynamic content
-                setTimeout(function () {
+                setTimeout(function() {
                     $blogContainer.isotope('reLayout');
                 }, 1000);
 
@@ -403,7 +424,7 @@ jQuery(document).ready(function () {
 
     // helper function
 
-    $.fn.isOnScreen = function () {
+    $.fn.isOnScreen = function() {
         var win = $(window);
         var viewport = {
             top: win.scrollTop(),
@@ -418,21 +439,21 @@ jQuery(document).ready(function () {
     };
 
     if (($().mb_YTPlayer) && ($(".videoSection").length > 0)) {
-        if((isiPad)||(($.browser.mobile))) {
+        if ((isiPad) || (($.browser.mobile))) {
             $("#ct_preloader").fadeOut(600);
             $(".fallbackVideo").fitVids().show();
 
         } else {
 
             $(".videoSection").mb_YTPlayer();
-            $('.videoSection').on("YTPStart", function () {
-                setTimeout(function () {
-                    $("#ct_preloader").fadeOut(300);
-                    $(".videoSection").find(".flexslider").fadeIn(1000);
-                }, 1050);
-            })
-            // if wait long - hide preloader
-            setTimeout(function () {
+            $('.videoSection').on("YTPStart", function() {
+                    setTimeout(function() {
+                        $("#ct_preloader").fadeOut(300);
+                        $(".videoSection").find(".flexslider").fadeIn(1000);
+                    }, 1050);
+                })
+                // if wait long - hide preloader
+            setTimeout(function() {
                 $("#ct_preloader").fadeOut(300);
             }, 9000);
 
@@ -442,7 +463,7 @@ jQuery(document).ready(function () {
             } else {
                 $('.videoSection.parallaxEffect .innerVideo').css("position", "absolute");
             }
-            $(window).on('scroll', function () {
+            $(window).on('scroll', function() {
                 if ($('.videoSection.parallaxEffect').isOnScreen()) {
                     $('.videoSection.parallaxEffect .innerVideo').css("position", "fixed");
                 } else {
@@ -450,7 +471,7 @@ jQuery(document).ready(function () {
                 }
             });
 
-            $('.videoSection.parallaxEffect').each(function () {
+            $('.videoSection.parallaxEffect').each(function() {
                 var $this = $(this);
                 $this.siblings(":not([data-bg], .navbar-default)").css({
                     "position": "relative",
@@ -464,7 +485,7 @@ jQuery(document).ready(function () {
     if (($.Isotope) && ($('#galleryContainer').length > 0)) {
         // gallery isotope
 
-        jQuery(window).load(function () {
+        jQuery(window).load(function() {
 
             var $container = jQuery('#galleryContainer'), // object that will keep track of options
                 isotopeOptions = {}, // defaults, used if not explicitly set in hash
@@ -476,21 +497,22 @@ jQuery(document).ready(function () {
                     sortAscending: true,
                     resizable: false, // disable normal resizing
                     // set columnWidth to a percentage of container width
-                    masonry: { }
+                    masonry: {}
                 };
 
 
-            $(window).smartresize(function () {
+            $(window).smartresize(function() {
                 $container.isotope({
                     // update columnWidth to a percentage of container width
-                    masonry: { }
+                    masonry: {}
                 });
             });
 
             // set up Isotope
             $container.isotope(defaultOptions);
 
-            var $optionSets = jQuery('#galleryFilters'), isOptionLinkClicked = false;
+            var $optionSets = jQuery('#galleryFilters'),
+                isOptionLinkClicked = false;
 
             // switches selected class on buttons
             function changeSelectedLink($elem) {
@@ -501,7 +523,7 @@ jQuery(document).ready(function () {
             }
 
 
-            $optionSets.find('a').click(function () {
+            $optionSets.find('a').click(function() {
                 var $this = jQuery(this);
                 // don't proceed if already selected
                 if ($this.hasClass('btn-primary')) {
@@ -510,7 +532,7 @@ jQuery(document).ready(function () {
                 changeSelectedLink($this);
                 // get href attr, remove leading #
                 var href = $this.attr('href').replace(/^#/, ''), // convert href into object
-                // i.e. 'filter=.inner-transition' -> { filter: '.inner-transition' }
+                    // i.e. 'filter=.inner-transition' -> { filter: '.inner-transition' }
                     option = jQuery.deparam(href, true);
                 // apply new option to previous
                 jQuery.extend(isotopeOptions, option);
@@ -523,43 +545,45 @@ jQuery(document).ready(function () {
 
             var hashChanged = false;
 
-            jQuery(window).bind('hashchange', function (event) {
-                // get options object from hash
-                var hashOptions = window.location.hash ? jQuery.deparam.fragment(window.location.hash, true) : {}, // do not animate first call
-                    aniEngine = hashChanged ? 'best-available' : 'none', // apply defaults where no option was specified
-                    options = jQuery.extend({}, defaultOptions, hashOptions, { animationEngine: aniEngine });
-                // apply options from hash
-                $container.isotope(options);
-                // save options
-                isotopeOptions = hashOptions;
+            jQuery(window).bind('hashchange', function(event) {
+                    // get options object from hash
+                    var hashOptions = window.location.hash ? jQuery.deparam.fragment(window.location.hash, true) : {}, // do not animate first call
+                        aniEngine = hashChanged ? 'best-available' : 'none', // apply defaults where no option was specified
+                        options = jQuery.extend({}, defaultOptions, hashOptions, {
+                            animationEngine: aniEngine
+                        });
+                    // apply options from hash
+                    $container.isotope(options);
+                    // save options
+                    isotopeOptions = hashOptions;
 
-                // if option link was not clicked
-                // then we'll need to update selected links
-                if (!isOptionLinkClicked) {
-                    // iterate over options
-                    var hrefObj, hrefValue, $selectedLink;
-                    for (var key in options) {
-                        hrefObj = {};
-                        hrefObj[ key ] = options[ key ];
-                        // convert object into parameter string
-                        // i.e. { filter: '.inner-transition' } -> 'filter=.inner-transition'
-                        hrefValue = jQuery.param(hrefObj);
-                        // get matching link
-                        $selectedLink = $optionSets.find('a[href="#' + hrefValue + '"]');
-                        changeSelectedLink($selectedLink);
+                    // if option link was not clicked
+                    // then we'll need to update selected links
+                    if (!isOptionLinkClicked) {
+                        // iterate over options
+                        var hrefObj, hrefValue, $selectedLink;
+                        for (var key in options) {
+                            hrefObj = {};
+                            hrefObj[key] = options[key];
+                            // convert object into parameter string
+                            // i.e. { filter: '.inner-transition' } -> 'filter=.inner-transition'
+                            hrefValue = jQuery.param(hrefObj);
+                            // get matching link
+                            $selectedLink = $optionSets.find('a[href="#' + hrefValue + '"]');
+                            changeSelectedLink($selectedLink);
+                        }
                     }
-                }
 
-                isOptionLinkClicked = false;
-                hashChanged = true;
-            })// trigger hashchange to capture any hash data on init
+                    isOptionLinkClicked = false;
+                    hashChanged = true;
+                }) // trigger hashchange to capture any hash data on init
                 .trigger('hashchange');
 
         });
     }
 
 
-    $(window).load(function () {
+    $(window).load(function() {
 
 
         /* ==================== */
@@ -567,11 +591,11 @@ jQuery(document).ready(function () {
 
         if (($().flexslider) && ($(".flexslider").length > 0)) {
 
-            $('.flexslider.std-slider').each(function () {
+            $('.flexslider.std-slider').each(function() {
                 var $this = $(this);
 
                 // initialize
-                $this.find(".slides > li").each(function () {
+                $this.find(".slides > li").each(function() {
                     var $slide_item = $(this);
                     var bg = validatedata($slide_item.attr('data-bg'), false);
                     if (bg) {
@@ -599,60 +623,57 @@ jQuery(document).ready(function () {
                 var dircontrols = validatedata(parseBoolean($this.attr('data-dircontrols')), false);
 
                 $this.flexslider({
-                    animation: "fade",              //String: Select your animation type, "fade" or "slide"
-                    animationLoop: loop,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
-                    smoothHeight: smooth,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode
-                    slideshow: slideshow,                //Boolean: Animate slider automatically
-                    slideshowSpeed: speed,           //Integer: Set the speed of the slideshow cycling, in milliseconds
-                    animationSpeed: animspeed,            //Integer: Set the speed of animations, in milliseconds
+                    animation: "fade", //String: Select your animation type, "fade" or "slide"
+                    animationLoop: loop, //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+                    smoothHeight: smooth, //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode
+                    slideshow: slideshow, //Boolean: Animate slider automatically
+                    slideshowSpeed: speed, //Integer: Set the speed of the slideshow cycling, in milliseconds
+                    animationSpeed: animspeed, //Integer: Set the speed of animations, in milliseconds
 
                     // Primary Controls
-                    controlNav: controls,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
-                    directionNav: dircontrols,             //Boolean: Create navigation for previous/next navigation? (true/false)
-                    touch:false,
+                    controlNav: controls, //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
+                    directionNav: dircontrols, //Boolean: Create navigation for previous/next navigation? (true/false)
+                    touch: false,
 
-                    pauseOnHover: true,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
-                    prevText: " ",           //String: Set the text for the "previous" directionNav item
+                    pauseOnHover: true, //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+                    prevText: " ", //String: Set the text for the "previous" directionNav item
                     nextText: " ",
                     useCSS: false,
 
                     // Callback API
-                    start: function () {
+                    start: function() {
                         //$this.removeClass("loading-slider");
 
-                        setTimeout(function () {
-                            $this.find(".slides > li.flex-active-slide .inner [data-fx]").each(function () {
+                        setTimeout(function() {
+                            $this.find(".slides > li.flex-active-slide .inner [data-fx]").each(function() {
                                 var $content = $(this);
                                 $content.addClass($content.data('fx')).addClass("activate");
                             })
                         }, 650);
 
                     },
-                    before: function () {
+                    before: function() {
 
-                        $this.find(".slides > li .inner [data-fx]").each(function () {
+                        $this.find(".slides > li .inner [data-fx]").each(function() {
                             var $content = $(this);
                             $content.removeClass($content.data('fx')).removeClass("activate");
                         })
-                    },           //Callback: function(slider) - Fires asynchronously with each slider animation
-                    after: function () {
-                        setTimeout(function () {
-                            $this.find(".slides > li.flex-active-slide .inner [data-fx]").each(function () {
+                    }, //Callback: function(slider) - Fires asynchronously with each slider animation
+                    after: function() {
+                        setTimeout(function() {
+                            $this.find(".slides > li.flex-active-slide .inner [data-fx]").each(function() {
                                 var $content = $(this);
                                 $content.addClass($content.data('fx')).addClass("activate");
                             })
                         }, 150);
-                    },            //Callback: function(slider) - Fires after each slider animation completes
-                    end: function () {
-                    },              //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
-                    added: function () {
-                    },            //{NEW} Callback: function(slider) - Fires after a slide is added
-                    removed: function () {
-                    }           //{NEW} Callback: function(slider) - Fires after a slide is removed
+                    }, //Callback: function(slider) - Fires after each slider animation completes
+                    end: function() {}, //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
+                    added: function() {}, //{NEW} Callback: function(slider) - Fires after a slide is added
+                    removed: function() {} //{NEW} Callback: function(slider) - Fires after a slide is removed
                 });
             });
 
-            $('.flexslider.carousel-slider').each(function () {
+            $('.flexslider.carousel-slider').each(function() {
                 var $this = $(this);
 
                 var slideshow = validatedata(parseBoolean($this.attr("data-slideshow")), false);
@@ -688,13 +709,27 @@ jQuery(document).ready(function () {
 
         function animateArrow() {
 
-            setTimeout(function () {
-                $(".bigArrow i").css('opacity', 1).stop(true, true).animate({ opacity: 0, top: "15px" }, { queue: false, duration: 350, complete: function () {
+            setTimeout(function() {
+                $(".bigArrow i").css('opacity', 1).stop(true, true).animate({
+                    opacity: 0,
+                    top: "15px"
+                }, {
+                    queue: false,
+                    duration: 350,
+                    complete: function() {
 
-                    $(".bigArrow i").css("top", "-15px").stop(true, true).delay(200).animate({ opacity: 1, top: 0 }, { queue: false, duration: 450, complete: function () {
-                        animateArrow();
-                    }})
-                }})
+                        $(".bigArrow i").css("top", "-15px").stop(true, true).delay(200).animate({
+                            opacity: 1,
+                            top: 0
+                        }, {
+                            queue: false,
+                            duration: 450,
+                            complete: function() {
+                                animateArrow();
+                            }
+                        })
+                    }
+                })
             }, 1800);
         }
 
@@ -713,7 +748,7 @@ jQuery(document).ready(function () {
     function swapMenu(mode) {
 
         var animDuration = 50;
-        if(isiPad) {
+        if (isiPad) {
             animDuration = 0;
         }
 
@@ -722,17 +757,17 @@ jQuery(document).ready(function () {
             oldsrc = $logoimage.attr('src');
         }
 
-        if ((mode == "standardMenu")&&(!($.browser.mobile))) {
+        if ((mode == "standardMenu") && (!($.browser.mobile))) {
             $onepagerNav.removeClass("navbar-transparent");
             if (!($logoimage.hasClass("swaped"))) {
 
-                $logoimage.fadeOut(animDuration, function () {
+                $logoimage.fadeOut(animDuration, function() {
                     $logoimage.attr('src', $logoimage.parent().attr("data-logo"));
                     $logoimage.fadeIn(animDuration).addClass("swaped");
                 });
             }
         }
-        if ((mode == "fixedMenu")&&(!($.browser.mobile))) {
+        if ((mode == "fixedMenu") && (!($.browser.mobile))) {
             $onepagerNav.addClass("navbar-transparent");
             $logoimage.attr('src', oldsrc);
             $logoimage.removeClass("swaped");
@@ -741,7 +776,7 @@ jQuery(document).ready(function () {
 
 
     var onepagerNavClass = "navbar-fixed-top";
-    var $onepagerNav = $("."+onepagerNavClass);
+    var $onepagerNav = $("." + onepagerNavClass);
 
     if (($onepagerNav.length > 0)) {
 
@@ -752,7 +787,7 @@ jQuery(document).ready(function () {
         if (!($.browser.mobile)) {
 
             // ipad landscape
-            if ($(window).width()<800) {
+            if ($(window).width() < 800) {
                 navHeightSpecial = parseInt($('.navbar-default').height());
             }
 
@@ -761,7 +796,7 @@ jQuery(document).ready(function () {
             scrollOffset = parseInt($('.navbar-default').height());
         }
 
-        $('.nav.navbar-nav li a').click(function () {
+        $('.nav.navbar-nav li a').click(function() {
             // if mobile and menu open - hide it after click
             var $togglebtn = $(".navbar-toggle")
 
@@ -783,7 +818,9 @@ jQuery(document).ready(function () {
 
                     var goPosition = $(content).offset().top + scrollOffset - navHeightSpecial;
 
-                    $('html,body').stop().animate({ scrollTop: goPosition}, 1000, 'easeInOutExpo', function () {
+                    $('html,body').stop().animate({
+                        scrollTop: goPosition
+                    }, 1000, 'easeInOutExpo', function() {
                         $this.closest("li").addClass("active");
                     });
 
@@ -800,12 +837,13 @@ jQuery(document).ready(function () {
 
 
 
-        $(window).on('scroll', function () {
+        $(window).on('scroll', function() {
 
-            var menuEl, mainMenu = $onepagerNav, mainMenuHeight = mainMenu.outerHeight() + 5;
+            var menuEl, mainMenu = $onepagerNav,
+                mainMenuHeight = mainMenu.outerHeight() + 5;
             var menuElements = mainMenu.find('a');
 
-            var scrollElements = menuElements.map(function () {
+            var scrollElements = menuElements.map(function() {
 
                 var content = $(this).attr("href");
                 var myUrl = content.match(/^#([^\/]+)$/i);
@@ -822,7 +860,7 @@ jQuery(document).ready(function () {
 
             var fromTop = $(window).scrollTop() + mainMenuHeight;
 
-            var currentEl = scrollElements.map(function () {
+            var currentEl = scrollElements.map(function() {
                 if ($(this).offset().top < fromTop) {
                     return this;
                 }
@@ -839,7 +877,7 @@ jQuery(document).ready(function () {
 
         swapMenu("init");
         var scroll = $(window).scrollTop();
-        if ((scroll > 0)&&(!isiPad)) {
+        if ((scroll > 0) && (!isiPad)) {
             swapMenu("standardMenu");
         }
 
@@ -847,8 +885,34 @@ jQuery(document).ready(function () {
         document.addEventListener("touchmove", ScrollStart, false);
 
     }
+
     function ScrollStart() {
         swapMenu("standardMenu");
     }
+
+    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+
+        fixedContentPos: false
+    });
+
+    $(function() {
+        $('.popup-modal').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#username',
+            modal: true
+        });
+        $(document).on('click', '.popup-modal-dismiss', function(e) {
+            e.preventDefault();
+            $.magnificPopup.close();
+        });
+    });
+
+
 });
 /* / document ready */

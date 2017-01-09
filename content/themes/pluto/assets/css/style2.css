@@ -1952,9 +1952,10 @@ footer .search-form input[type="submit"].active {
 .lt-content p{}
 
 .lt-image {
-  margin-right:120px;
-  height: 320px;
-  width: 320px;
+  margin-right:50px;
+  margin-top: 50px;
+  height: 500px;
+  width: 500px;
 }
 
 
@@ -5110,4 +5111,33 @@ article.sticky {
 
 .post-content .mbSlider-main-container{
     margin-bottom: 25px;
+}
+
+/**
+ * Simple fade transition,
+ */
+.mfp-fade.mfp-bg {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out;
+	-moz-transition: all 0.15s ease-out;
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out;
+	-moz-transition: all 0.15s ease-out;
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
 }
