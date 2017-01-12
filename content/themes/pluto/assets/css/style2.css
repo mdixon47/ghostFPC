@@ -331,7 +331,7 @@ blockquote.huge {
     padding: 40px 0 75px 0;
 }
 blockquote.huge p {
-    font-size: 32px;
+    font-size: 25px;
     line-height: 45px;
 }
 blockquote.huge .author {
@@ -1953,7 +1953,6 @@ footer .search-form input[type="submit"].active {
 
 .lt-image {
   margin-right:50px;
-  margin-top: 50px;
   height: 500px;
   width: 500px;
 }
@@ -3418,7 +3417,7 @@ img.mfp-img {
 }
 /* overlay animate in */
 .mfp-fade.mfp-bg.mfp-ready {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 /* overlay animate out */
 .mfp-fade.mfp-bg.mfp-removing {
@@ -5111,33 +5110,4 @@ article.sticky {
 
 .post-content .mbSlider-main-container{
     margin-bottom: 25px;
-}
-
-/**
- * Simple fade transition,
- */
-.mfp-fade.mfp-bg {
-	opacity: 0;
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-}
-.mfp-fade.mfp-bg.mfp-ready {
-	opacity: 0.8;
-}
-.mfp-fade.mfp-bg.mfp-removing {
-	opacity: 0;
-}
-
-.mfp-fade.mfp-wrap .mfp-content {
-	opacity: 0;
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-}
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-	opacity: 1;
-}
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-	opacity: 0;
 }
