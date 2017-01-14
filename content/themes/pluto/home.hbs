@@ -1,15 +1,11 @@
 {{!< default}}
 
 {{!> push_slider}}
-    <!--this is big push_effect, if you want to disable it just write ! before > -->
-    {{!>
-    sliced_effect}} <!--this is big slice effect, just remove ! to enable the effect-->
-        {{!>
-        parallax_video}} <!--this is parallax video effect, just remove! to enable the effect-->
-            {{!>
-            simply_slider}} <!--this is simply slider with two pictures, just remove ! to enable slider-->
-                {{> big_slider}}
-                <!--this iss big type of slider with two pictures, add ! to disable the slider-->
+<!--this is big push_effect, if you want to disable it just write ! before > -->
+{{!>sliced_effect}} <!--this is big slice effect, just remove ! to enable the effect-->
+{{!>parallax_video}} <!--this is parallax video effect, just remove! to enable the effect-->
+{{!>simply_slider}} <!--this is simply slider with two pictures, just remove ! to enable slider-->
+{{> big_slider}}<!--this iss big type of slider with two pictures, add ! to disable the slider-->
 
                 <div class="content-effect">
                     {{!>
@@ -189,21 +185,75 @@
                         </header>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="info-struggle text-center">
+                                <div class="info-struggle text-center" >
                                   <p class="larger">
                                     If you are concerned that someone is showing warning signs of suicide, that those signs are acutely imminent and they may be in crisis and need help, remember the mnemonic, IS PATH WARM, when looking for those signs. Learn more here and how and when to get help.
                                   </p>
                                     <a href="#test-modal" class="popup-modal btn btn-default btn-lg">Learn More</a>
                                 </div>
-                                <div id="test-modal" class="mfp-hide white-popup-block">
-                                    <h1>Modal dialog</h1>
-                                    <p>You won't be able to dismiss this by usual means (escape or click button), but you can close it programatically based on user choices or actions.</p>
-                                    <p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
+                                <div id="test-modal" class="mfp-hide popup-block-signs animated" data-fx="fadeIn">
+                                    <h3>Warning Signs of Suicide</h3>
+
+                                    <p>
+                                      The mnemonic "IS PATH WARM" can be used to remember the warning signs of suicide:
+                                    </p>
+                                    <br/>
+                                    <ul>
+                                      <li><p>"I" is for Ideation</p></li>
+                                      <li><p>"S" is for Substance Abuse</p></li>
+                                      <br/>
+                                      <li><p>"P" is for Purposelessness</p></li>
+                                      <li><p>"A" is for Anxiety</p></li>
+                                      <li><p>"T" is for Trapped</p></li>
+                                      <li><p>"H" is for Hopelessness</p></li>
+                                      <br>
+                                      <li><p>"W" is for Withdrawal</p></li>
+                                      <li><p>"A" is for Anger</p></li>
+                                      <li><p>"R" is for Recklessness</p></li>
+                                      <li><p>"M" is for Mood Change</p></li>
+                                    </ul>
+
+                                    <p>A person in acute risk for suicidal behavior most often will show:</p>
+                                    <br/>
+
+                                    <h4>Warning Signs of Acute Risk:</h4>
+
+                                    <ul>
+                                      <li><p>Threatening to hurt or kill him or herself, or talking of wanting to hurt or kill him or herself; and/or,</p></li>
+                                      <li><p>Looking for ways to kill him or herself by seeking access to firearms, available pills, or other  means; and/or,</p></li>
+                                      <li><p>Talking or writing about death, dying or suicide, when these actions are out of the ordinary.</p></li>
+                                    </ul>
+                                    <p>
+                                      These might be remembered as expressed or communicated "IDEATION".  If observed, seek help as soon as possible by contacting a mental health professional or calling 1-800-273-TALK (8255) for a referral. You can also text the Crisis Text Line by texting "Hello" or "Start" to 741-741 to talk to a trained counselor.
+                                    </p>
+                                    <br/>
+                                    <h4>Additional Warning Signs:</h4>
+                                  <ul>
+                                      <li><p>Increased SUBSTANCE (alcohol or drug) use</p></li>
+                                      <li><p>No reason for living; no sense of PURPOSE in life</p></li>
+                                      <li><p>ANXIETY, agitation, unable to sleep or sleeping all the time</p></li>
+                                      <li><p>Feeling TRAPPED - like there's no way out
+                                        </p></li>
+                                      <li><p>HOPELESSNESS</p></li>
+                                      <li><p>WITHDRAWING from friends, family and society</p></li>
+                                      <li><p>Rage, uncontrolled ANGER, seeking revenge</p></li>
+                                      <li><p>Acting RECKLESS or engaging in risky activities, seemingly without thinking</p></li>
+                                      <li><p>Dramatic MOOD change</p></li>
+                                  </ul>
+
+                                  <p>
+                                    If observed, seek help as soon as possible  by contacting a mental  health  professional  or  calling 1-800-273 TALK (8255) for a  referral. You can also text the Crisis Text Line by texting "Hello" or "Start" to 741-741 to talk to a trained counselor.
+                                  </p>
+                                  <br/>
+                                    <p><a class="popup-modal-dismiss btn btn-default btn-small" href="#" >Close</a></p>
+
                                 </div>
                             </div>
                         </div>
                         <div class="page-footer">
-                            <p class="larger text-center">Call for more information to meet specific needs and interests. Trainings occur frequently. To inquire about the training schedule or to host a training for your staff, clientele, and/or organization, please call (605) 348-6692.</p>
+                            <p class="larger text-center">
+                              Call for more information to meet specific needs and interests. Trainings occur frequently. To inquire about the training schedule or to host a training for your staff, clientele, and/or organization, please call (605) 348-6692.
+                            </p>
                         </div>
                 </section>
                 <!-- / section -->

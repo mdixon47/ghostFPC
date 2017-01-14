@@ -76,6 +76,7 @@ body {
     line-height: 22px;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
+    padding-top: 90px;
 }
 body li {
     color:  #666;

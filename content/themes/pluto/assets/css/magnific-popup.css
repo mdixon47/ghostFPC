@@ -19,6 +19,40 @@
     position: relative;
   }
 
+  .popup-block-signs{
+    background: url(/assets/images/content/depressed_lady.jpeg) no-repeat;
+    background-size: contain;
+    padding: 30px 30px;
+    text-align: left;
+    max-width: 1425px;
+    height: 950px;
+    margin: 40px auto;
+    position: relative;
+    border: 2px solid #fff !important;
+    overflow-x: scroll;
+  }
+  .popup-block-signs p{
+    font-size: 14px;
+    color: #fff;
+
+  }
+  .popup-block-signs h3{
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .popup-block-signs h4{
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .popup-block-signs ul li{
+    list-style: none;
+  }
+  .popup-block-signs .btn{
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
 .mfp-wrap {
   top: 0;
   left: 0;
