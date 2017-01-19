@@ -1947,7 +1947,12 @@ footer .search-form input[type="submit"].active {
 
 /* ===================== */
 /* ==== Loss Team Content ======== */
+#lossteam{
+  background: url('images/content/bglossteam.jpg') no-repeat cover cover;
+
+}
 .lt-content{
+
   margin-top: 30px;
 }
 .lt-content p{}
