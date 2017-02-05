@@ -1347,6 +1347,24 @@ body.preloader #ct_preloader {
 .tweet_list .tweet_time a {
     color: #545158;
 }
+
+
+/* ==================== */
+/* === Calendar info === */
+.events-instr{
+  font-size: 1.2em;
+  line-height: 30px;
+  margin: 35px;
+}
+
+
+
+
+
+
+
+
+
 /* ================== */
 /* === PERSON BOX === */
 .personBox h4 {
