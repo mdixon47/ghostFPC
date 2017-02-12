@@ -1199,6 +1199,7 @@ body.preloader #ct_preloader {
 .iconBox.type3,
 .iconBox.type5 {
     margin-top: 5px;
+    margin-bottom: 20px !important;
 }
 .iconBox.type3 p,
 .iconBox.type5 p {
@@ -1211,6 +1212,7 @@ body.preloader #ct_preloader {
 .iconBox.type3 + .iconBox,
 .iconBox.type5 + .iconBox {
     margin-top: 40px;
+
 }
 .iconBox.type3 .media-heading,
 .iconBox.type5 .media-heading {
