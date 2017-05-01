@@ -180,6 +180,7 @@ h6 {
     border: 0;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 .page-header h2 {
     margin-bottom: 40px;
@@ -325,11 +326,11 @@ blockquote.intext p {
     margin-right: -100px;
 }
 blockquote.huge {
-    font-size: 32px;
+    font-size: 26px;
     line-height: 45px;
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 40px 0 75px 0;
+    padding: 35px 0 55px 0;
 }
 blockquote.huge p {
     font-size: 25px;
@@ -5136,4 +5137,16 @@ article.sticky {
 
 .post-content .mbSlider-main-container{
     margin-bottom: 25px;
+}
+
+.youth_resource_1_info{
+  font-size: 18px;
+}
+.youth_resource_2_info ul li{
+   font-size: 18px;
+   list-style-type: none;
+}
+.youth_resource_3_info ul li{
+  list-style-type: none;
+  font-size: 18px;
 }
