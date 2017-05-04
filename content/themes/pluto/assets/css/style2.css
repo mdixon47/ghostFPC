@@ -436,8 +436,8 @@ input::-moz-focus-inner {
     background: transparent;
 }
 .btn-primary {
-    background: #ea623d;
-    border-color: #ea623d;
+    background: #815c81;
+    border-color: #815c81;
     color: #fff;
 }
 .btn-primary:hover,
@@ -904,7 +904,7 @@ body.contact .col-md-4 .socialIcons.bigIcons.type2 > li {
     display: none;
     width: 70px;
     height: 70px;
-    background: #ea623d;
+    background: #815c81;
     opacity: 0.7;
     filter: alpha(opacity=70);
     -webkit-border-radius: 50%;
@@ -1226,7 +1226,7 @@ body.preloader #ct_preloader {
     display: block;
     width: 36px;
     height: 36px;
-    background: #ea623d;
+    background: #4B5976;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
